@@ -21,11 +21,19 @@ public class Registers {
   public final boolean isNoDebug;
   private final Expression[][] values;
   private final int[][] updated;
+  private final boolean[][] temporary;
+
+  public void temporary(int first, int begin, int end) {
+    for(int r = first; r < registers; r++) {
+      for(int line = begin; line <= end; line++) temporary[r][line] = true;
+    }
+  }
   
   public Registers(int registers, int length, Declaration[] declList, Function f, boolean isNoDebug) {
     this.registers = registers;
     this.length = length;
     decls = new Declaration[registers][length + 1];
+    temporary = new boolean[registers][length + 1];
     for(int i = 0; i < declList.length; i++) {
       Declaration decl = declList[i];
       int register = 0;
@@ -59,7 +67,7 @@ public class Registers {
   
   public boolean isLocal(int register, int line) {
     if(register < 0) return false;
-    return decls[register][line] != null;
+    return decls[register][line] != null && !temporary[register][line];
   }
   
   public boolean isLocalName(String name, int line) {
