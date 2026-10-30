@@ -95,12 +95,15 @@ public class Decompiler {
         int i;
         for(i = 0; i < Math.min(function.numParams, function.maximumStackSize); i++) {
           declList[i] = new Declaration("A" + i + "_" + function.level, 0, scopeEnd);
+          declList[i].register = i;
         }
         if(getVersion().varargtype.get() != Version.VarArgType.ELLIPSIS && (function.vararg & 1) != 0 && i < function.maximumStackSize) {
           declList[i++] = new Declaration("arg", 0, scopeEnd);
+          declList[i - 1].register = i - 1;
         }
         for(; i < function.maximumStackSize; i++) {
           declList[i] = new Declaration("L" + i + "_" + function.level, 0, scopeEnd);
+          declList[i].register = i;
         }
       }
     } else if(function.locals.length >= function.numParams) {

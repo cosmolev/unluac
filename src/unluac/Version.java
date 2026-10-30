@@ -32,6 +32,12 @@ public class Version {
     
   }
   
+  public static enum Maybe {
+    NO,
+    MAYBE,
+    YES,
+  }
+  
   public static enum VarArgType {
     ARG,
     HYBRID,
@@ -113,7 +119,6 @@ public class Version {
   public final Setting<InstructionFormat> instructionformat;
   public final Setting<Integer> outerblockscopeadjustment;
   public final Setting<Boolean> extendedrepeatscope;
-  public final Setting<Boolean> closeinscope;
   public final Setting<CloseSemantics> closesemantics;
   public final Setting<UpvalueDeclarationType> upvaluedeclarationtype;
   public final Setting<Op> fortarget;
@@ -123,6 +128,7 @@ public class Version {
   public final Setting<Boolean> usenestinglongstrings;
   public final Setting<String> environmenttable;
   public final Setting<Boolean> useifbreakrewrite;
+  public final Setting<Maybe> useifgotorewrite;
   public final Setting<Boolean> usegoto;
   public final Setting<Integer> rkoffset;
   public final Setting<Boolean> allownegativeint;
@@ -170,7 +176,6 @@ public class Version {
           instructionformat = new Setting<>(InstructionFormat.LUA50);
           outerblockscopeadjustment = new Setting<>(-1);
           extendedrepeatscope = new Setting<Boolean>(true);
-          closeinscope = new Setting<Boolean>(true);
           closesemantics = new Setting<CloseSemantics>(CloseSemantics.DEFAULT);
           upvaluedeclarationtype = new Setting<>(UpvalueDeclarationType.INLINE);
           fortarget = new Setting<>(Op.FORLOOP);
@@ -180,6 +185,7 @@ public class Version {
           usenestinglongstrings = new Setting<>(true);
           environmenttable = new Setting<>(null);
           useifbreakrewrite = new Setting<>(false);
+          useifgotorewrite = new Setting<>(Maybe.NO);
           usegoto = new Setting<>(false);
           rkoffset = new Setting<>(250);
           allownegativeint = new Setting<Boolean>(false);
@@ -201,7 +207,6 @@ public class Version {
           instructionformat = new Setting<>(InstructionFormat.LUA51);
           outerblockscopeadjustment = new Setting<>(-1);
           extendedrepeatscope = new Setting<Boolean>(false);
-          closeinscope = new Setting<Boolean>(true);
           closesemantics = new Setting<CloseSemantics>(CloseSemantics.DEFAULT);
           upvaluedeclarationtype = new Setting<>(UpvalueDeclarationType.INLINE);
           fortarget = new Setting<>(null);
@@ -211,6 +216,7 @@ public class Version {
           usenestinglongstrings = new Setting<>(false);
           environmenttable = new Setting<>(null);
           useifbreakrewrite = new Setting<>(false);
+          useifgotorewrite = new Setting<>(Maybe.NO);
           usegoto = new Setting<>(false);
           rkoffset = new Setting<>(256);
           allownegativeint = new Setting<Boolean>(luaj);
@@ -232,7 +238,6 @@ public class Version {
           instructionformat = new Setting<>(InstructionFormat.LUA51);
           outerblockscopeadjustment = new Setting<>(0);
           extendedrepeatscope = new Setting<Boolean>(false);
-          closeinscope = new Setting<Boolean>(null);
           closesemantics = new Setting<CloseSemantics>(CloseSemantics.JUMP);
           upvaluedeclarationtype = new Setting<>(UpvalueDeclarationType.HEADER);
           fortarget = new Setting<>(null);
@@ -242,6 +247,7 @@ public class Version {
           usenestinglongstrings = new Setting<>(false);
           environmenttable = new Setting<>("_ENV");
           useifbreakrewrite = new Setting<>(true);
+          useifgotorewrite = new Setting<>(Maybe.YES);
           usegoto = new Setting<>(true);
           rkoffset = new Setting<>(256);
           allownegativeint = new Setting<Boolean>(luaj);
@@ -263,7 +269,6 @@ public class Version {
           instructionformat = new Setting<>(InstructionFormat.LUA51);
           outerblockscopeadjustment = new Setting<>(0);
           extendedrepeatscope = new Setting<Boolean>(false);
-          closeinscope = new Setting<Boolean>(null);
           closesemantics = new Setting<CloseSemantics>(CloseSemantics.JUMP);
           upvaluedeclarationtype = new Setting<>(UpvalueDeclarationType.HEADER);
           fortarget = new Setting<>(null);
@@ -273,6 +278,7 @@ public class Version {
           usenestinglongstrings = new Setting<>(false);
           environmenttable = new Setting<>("_ENV");
           useifbreakrewrite = new Setting<>(true);
+          useifgotorewrite = new Setting<>(Maybe.YES);
           usegoto = new Setting<>(true);
           rkoffset = new Setting<>(256);
           allownegativeint = new Setting<Boolean>(true);
@@ -294,7 +300,6 @@ public class Version {
           instructionformat = new Setting<>(InstructionFormat.LUA54);
           outerblockscopeadjustment = new Setting<>(0);
           extendedrepeatscope = new Setting<Boolean>(false);
-          closeinscope = new Setting<Boolean>(false);
           closesemantics = new Setting<CloseSemantics>(CloseSemantics.LUA54);
           upvaluedeclarationtype = new Setting<>(UpvalueDeclarationType.HEADER);
           fortarget = new Setting<>(null);
@@ -304,6 +309,7 @@ public class Version {
           usenestinglongstrings = new Setting<>(false);
           environmenttable = new Setting<>("_ENV");
           useifbreakrewrite = new Setting<>(true);
+          useifgotorewrite = new Setting<>(Maybe.MAYBE);
           usegoto = new Setting<>(true);
           rkoffset = new Setting<>(null);
           allownegativeint = new Setting<Boolean>(true);
