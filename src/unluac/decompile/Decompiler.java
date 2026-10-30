@@ -180,6 +180,7 @@ public class Decompiler {
   public State decompile() {
     State state = new State();
     state.r = new Registers(registers, length, declList, f, getNoDebug());
+    if(getNoDebug()) StrippedResults.configure(code, state.r);
     
     Validator.process(f, state.r);
     
@@ -819,6 +820,11 @@ public class Decompiler {
       case DEFAULT54:
         throw new IllegalStateException();
     }
+    if(getNoDebug() && StrippedResults.openTable(code, line)) {
+      Expression table = r.getValue(A, line);
+      if(!table.isTableLiteral()) throw new IllegalStateException("Cannot reconstruct stripped open table constructor");
+      operations.add(new RegisterSet(line, A, table));
+    }
     return operations;
   }
   
@@ -910,6 +916,7 @@ public class Decompiler {
     if(begin <= end) {
       State state = new State();
       state.r = new Registers(registers, length, declList, f, getNoDebug());
+    if(getNoDebug()) StrippedResults.configure(code, state.r);
       state.outer = new OuterBlock(function, code.length);
       Block scoped = new DoEndBlock(function, begin, end + 1);
       state.flags = new byte[code.length + 1];
