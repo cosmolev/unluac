@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the committed Java source into the checksum-pinned open1 JAR."""
+"""Build the committed Java source into the checksum-pinned fork JAR."""
 import argparse
 import hashlib
 import json
@@ -16,11 +16,11 @@ def sha(data):
 
 
 def main():
+    pin = json.loads((HERE / 'build.json').read_text())
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--javac', default='javac')
-    parser.add_argument('--output', type=Path, default=HERE / 'dist/unluac-1.2.3.569-open1.jar')
+    parser.add_argument('--output', type=Path, default=HERE / ('dist/unluac-' + pin['version'] + '.jar'))
     args = parser.parse_args()
-    pin = json.loads((HERE / 'build.json').read_text())
     version = subprocess.check_output([args.javac, '-version'], text=True).strip()
     if version != pin['javac']:
         raise SystemExit('Reproducible build requires ' + pin['javac'] + '; found ' + version)
@@ -36,7 +36,7 @@ def main():
         files['META-INF/MANIFEST.MF'] = b'Manifest-Version: 1.0\r\nMain-Class: unluac.Main\r\n\r\n'
         for name in ['license.txt', 'authors.txt']:
             files[name] = (HERE / name).read_bytes()
-        # Preserve the original open1 build descriptor to reproduce the deployed bytes.
+        # Record the upstream base and build settings without a self-referential commit hash.
         files['decompiler-build.json'] = (HERE / 'build-metadata.json').read_bytes()
         args.output.parent.mkdir(parents=True, exist_ok=True)
         with zipfile.ZipFile(args.output, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as jar:

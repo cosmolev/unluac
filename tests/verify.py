@@ -20,8 +20,9 @@ def observe(command):
 
 
 def main():
+    build = json.loads((HERE.parent / 'build.json').read_text())
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--jar', type=Path, default=HERE.parent / 'dist/unluac-1.2.3.569-open1.jar')
+    parser.add_argument('--jar', type=Path, default=HERE.parent / ('dist/unluac-' + build['version'] + '.jar'))
     parser.add_argument('--tools', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--java', default='java')
@@ -29,7 +30,6 @@ def main():
     args = parser.parse_args()
     catalog = json.loads((HERE / 'fixtures/fixtures.json').read_text())
     config = json.loads(args.tools.read_text())
-    build = json.loads((HERE.parent / 'build.json').read_text())
     assert sha(args.jar) == build['jarSha256'], 'Unexpected engine JAR'
     for key in {c['compiler'] for c in catalog['cases']}:
         oracle = config['oracles'][key]

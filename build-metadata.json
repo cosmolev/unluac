@@ -1,1 +1,1 @@
-{"archiveSha256": "3e63f06db165adbd276c0720f66933debc4b1e18f332e36dcbc5a31a109d1ab3", "javac": "javac 21.0.9", "patchSha256": "ff94dbb9f155d30985e8d793cc4efa024e675eeafa85c8e0c621c0b98aae5aca", "revision": "e2dc9ae17b46796fa08807d6e3312d708be62ba8", "version": "1.2.3.569-open1"}
+{"javac": "javac 21.0.9", "javacOptions": ["--release", "8", "-g:source,lines"], "repository": "https://github.com/cosmolev/unluac", "upstreamRepository": "https://github.com/Jeong-Min-Cho/unluac", "upstreamRevision": "744c8149d93f7739f17b7f0f506822fb93ba7193", "version": "1.2.3.569-open2"}

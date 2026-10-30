@@ -2,15 +2,15 @@
 
 This fork maintains the standard Lua engine used by
 [cosmolev/decompiler](https://github.com/cosmolev/decompiler). The active `cosmolev`
-branch contains the verified upstream **1.2.3.569** source plus the **open1** repair
+branch contains the newer upstream source plus the **1.2.3.569-open2** repair
 for stripped Lua multiple-return and table-constructor reconstruction.
 
 Official upstream is [unluac on SourceForge](https://sourceforge.net/p/unluac/hgcode/ci/default/tree/).
 The GitHub fork relationship is with [Jeong-Min-Cho/unluac](https://github.com/Jeong-Min-Cho/unluac).
-Our branch starts from that mirror's initial import, updates the build sources to
-SourceForge revision `e2dc9ae17b46796fa08807d6e3312d708be62ba8` (23 December 2025),
-then commits the fix directly in Java. `UPSTREAM.json` records the source provenance.
-The mirror's later changes are on its separate upstream branch.
+Our branch is based on its `main` at
+[`744c8149d93f7739f17b7f0f506822fb93ba7193`](https://github.com/Jeong-Min-Cho/unluac/commit/744c8149d93f7739f17b7f0f506822fb93ba7193).
+The open-result fix and build/tests are replayed directly onto that source. The old
+December-source import commit is omitted. `UPSTREAM.json` records the source provenance.
 
 ## Fix
 
@@ -35,21 +35,20 @@ Use Python 3 and **JDK 21.0.9**:
 
 ```sh
 python3 build.py --javac /path/to/jdk-21.0.9/bin/javac
-java -jar dist/unluac-1.2.3.569-open1.jar --version
-java -jar dist/unluac-1.2.3.569-open1.jar input.luac > recovered.lua
+java -jar dist/unluac-1.2.3.569-open2.jar --version
+java -jar dist/unluac-1.2.3.569-open2.jar input.luac > recovered.lua
 ```
 
 The build compiles the committed Java files directly with `--release 8 -g:source,lines`.
-It applies no source patches. Sorted ZIP entries and fixed timestamps reproduce the
-already-deployed JAR byte for byte:
+It applies no source patches. Sorted ZIP entries and fixed timestamps reproduce this JAR:
 
-`c478aa0c22973903d7868350fef2cd99396146acb01af9e50e3e54e92d9fa16b`
+`000e7fcd7bdffe6f384767ba11aaa088fca2dcd1ac24b9158affc38f69a9e80a`
 
-`build.json` pins the sources and resulting JAR. `build-metadata.json` retains the
-original open1 build descriptor embedded in that JAR, including historical upstream
-archive/diff digests, solely to preserve its binary identity. Git commits are now the
-source of the engine changes. When changing Java source, review and update the source
-and artifact pins as part of the release.
+`build.json` pins the sources and resulting JAR. `build-metadata.json` embeds the upstream
+Git commit, fork version and compiler settings in the JAR. Git commits are the source of
+the engine changes. When changing Java source, review and update the source and artifact
+pins as part of the release. The earlier open1 build remains available in the repository's
+history and the `releases/open1` branch.
 
 For a service embedding the engine, use `unluac.Main.decompile`, not the CLI's exiting
 `main` method. Source generation alone does not guarantee semantic equivalence.
@@ -79,7 +78,10 @@ programs and their derivatives execute. All build output stays under `build/` or
 
 Lua 5.0 instr32 changes the compiler's `Instruction` typedef; Lua 5.1 size32 changes
 serialized string sizes. Neither claims to have been compiled on a 32-bit host.
-Native 8-byte-instruction Lua 5.0 and Lua 5.5 support are outside this repair.
+Native 8-byte-instruction Lua 5.0 remains unsupported. The newer base can parse Lua 5.5,
+but that support is not qualified for the application: an exploratory 18-case authored
+matrix had 13 behavior passes, three behavior mismatches and two reconstruction refusals.
+The application keeps Lua 5.5 disabled explicitly in its direct and archive paths.
 
 ## License
 
