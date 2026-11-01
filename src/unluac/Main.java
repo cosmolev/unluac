@@ -24,7 +24,7 @@ import unluac.util.FileUtils;
 
 public class Main {
 
-  public static String version = "1.2.3.569-open2";
+  public static String version = "1.2.3.569-scopes1";
   
   public static void main(String[] args) {
     String fn = null;

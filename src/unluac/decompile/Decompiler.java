@@ -22,6 +22,7 @@ import unluac.decompile.expression.TableLiteral;
 import unluac.decompile.expression.TableReference;
 import unluac.decompile.expression.Vararg;
 import unluac.decompile.operation.CallOperation;
+import unluac.decompile.operation.ConditionalRegisterSet;
 import unluac.decompile.operation.GlobalSet;
 import unluac.decompile.operation.LoadNil;
 import unluac.decompile.operation.MultipleRegisterSet;
@@ -88,35 +89,36 @@ public class Decompiler {
     registers = function.maximumStackSize;
     length = function.code.length;
     code = f.code;
+    Declaration[] declarations;
     if(function.stripped || getConfiguration().variable == Configuration.VariableMode.NODEBUG) {
       if(getConfiguration().variable == Configuration.VariableMode.FINDER) {
-        declList = VariableFinder.process(this, function.numParams, function.maximumStackSize);
+        declarations = VariableFinder.process(this, function.numParams, function.maximumStackSize);
       } else {
-        declList = new Declaration[function.maximumStackSize];
+        declarations = new Declaration[function.maximumStackSize];
         int scopeEnd = length + function.header.version.outerblockscopeadjustment.get();
         int i;
         for(i = 0; i < Math.min(function.numParams, function.maximumStackSize); i++) {
-          declList[i] = new Declaration("A" + i + "_" + function.level, 0, scopeEnd);
-          declList[i].register = i;
+          declarations[i] = new Declaration("A" + i + "_" + function.level, 0, scopeEnd);
+          declarations[i].register = i;
         }
         if(getVersion().varargtype.get() != Version.VarArgType.ELLIPSIS && (function.vararg & 1) != 0 && i < function.maximumStackSize) {
-          declList[i++] = new Declaration("arg", 0, scopeEnd);
-          declList[i - 1].register = i - 1;
+          declarations[i++] = new Declaration("arg", 0, scopeEnd);
+          declarations[i - 1].register = i - 1;
         }
         for(; i < function.maximumStackSize; i++) {
-          declList[i] = new Declaration("L" + i + "_" + function.level, 0, scopeEnd);
-          declList[i].register = i;
+          declarations[i] = new Declaration("L" + i + "_" + function.level, 0, scopeEnd);
+          declarations[i].register = i;
         }
       }
     } else if(function.locals.length >= function.numParams) {
-      declList = new Declaration[function.locals.length];
-      for(int i = 0; i < declList.length; i++) {
-        declList[i] = new Declaration(function.locals[i], code);
+      declarations = new Declaration[function.locals.length];
+      for(int i = 0; i < declarations.length; i++) {
+        declarations[i] = new Declaration(function.locals[i], code);
       }
     } else {
-      declList = new Declaration[function.numParams];
-      for(int i = 0; i < declList.length; i++) {
-        declList[i] = new Declaration("_ARG_" + i + "_", 0, length - 1);
+      declarations = new Declaration[function.numParams];
+      for(int i = 0; i < declarations.length; i++) {
+        declarations[i] = new Declaration("_ARG_" + i + "_", 0, length - 1);
       }
     }
     upvalues = new Upvalues(function, parentDecls, line);
@@ -151,6 +153,7 @@ public class Decompiler {
         }
       }
     }
+    declList = getNoDebug() ? StrippedScopes.declarations(function, code, declarations) : declarations;
     decompilers = new Decompiler[functions.length];
     for(int f = 0; f < functions.length; f++) {
       int closureLine = closureLines[f];
@@ -192,6 +195,16 @@ public class Decompiler {
     state.flags = new byte[code.length + 1];
     for(int i = 1; i <= code.length; i++) {
       if(result.labels[i]) state.flags[i] |= Flag.LABELS.bit;
+      // Lua 5.0 emits SUB + JMP before FORLOOP instead of FORPREP. The source
+      // numeric-for will emit that adjustment itself; retaining it subtracts twice.
+      if(getNoDebug() && getVersion().getVersionMinor() == 0 && i + 1 <= code.length
+          && code.op(i) == Op.SUB && code.A(i) == code.B(i) && code.C(i) == code.A(i) + 2
+          && code.op(i + 1) == Op.JMP) {
+        int target = code.target(i + 1);
+        if(target > i + 1 && target <= code.length && code.op(target) == Op.FORLOOP
+            && code.A(target) == code.A(i) && code.target(target) == i + 2)
+          state.flags[i] |= Flag.SKIP.bit;
+      }
     }
     processSequence(state, blocks, 1, code.length);
     for(Block block : blocks) {
@@ -684,13 +697,13 @@ public class Decompiler {
         break;
       case TEST50: {
         if(getNoDebug() && A != B) {
-          operations.add(new RegisterSet(line, A, Expression.make(Expression.BinaryOperation.OR, r.getExpression(B, line), initialExpression(state, A, line))));
+          operations.add(new ConditionalRegisterSet(function, line, A, B, C != 0));
         }
         break;
       }
       case TESTSET: case TESTSET54: {
         if(getNoDebug()) {
-          operations.add(new RegisterSet(line, A, Expression.make(Expression.BinaryOperation.OR, r.getExpression(B, line), initialExpression(state, A, line))));
+          operations.add(new ConditionalRegisterSet(function, line, A, B, code.op(line) == Op.TESTSET54 ? code.k(line) : C != 0));
         }
         break;
       }
@@ -816,6 +829,7 @@ public class Decompiler {
         break;
       case TBC:
         r.getDeclaration(A, line).tbc = true;
+        if(getNoDebug()) operations.add(new RegisterSet(line, A, r.getExpression(A, line)));
         break;
       case CLOSE: case CLOSE55:
         break;
@@ -875,15 +889,6 @@ public class Decompiler {
       operations.add(new RegisterSet(line, A, table));
     }
     return operations;
-  }
-  
-  private Expression initialExpression(State state, int register, int line) {
-    if(line == 1) {
-      if(register < function.numParams) throw new IllegalStateException();
-      return ConstantExpression.createNil(line);
-    } else {
-      return state.r.getExpression(register, line - 1);
-    }
   }
   
   private Assignment processOperation(State state, Operation operation, int line, int nextLine, Block block) {

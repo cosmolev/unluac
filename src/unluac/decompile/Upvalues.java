@@ -14,12 +14,12 @@ public class Upvalues {
       if(upvalue.name == null || upvalue.name.isEmpty()) {
         if(upvalue.instack) {
           if(parentDecls != null) {
+            Declaration selected = null;
             for(Declaration decl : parentDecls) {
-              if(decl.register == upvalue.idx && line >= decl.begin && line < decl.end) {
-                upvalue.name = decl.name;
-                break;
-              }
+              if(decl.register == upvalue.idx && line >= decl.begin && line <= decl.end
+                  && (selected == null || decl.begin > selected.begin)) selected = decl;
             }
+            if(selected != null) upvalue.name = selected.name;
           }
         } else {
           LUpvalue[] parentvals = func.parent.upvalues;

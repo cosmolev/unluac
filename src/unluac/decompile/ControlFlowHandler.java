@@ -97,6 +97,7 @@ public class ControlFlowHandler {
     public int[] resolved;
     public boolean[] labels;
     public List<Block> blocks;
+    public List<Break> forwardBreaks = new ArrayList<Break>();
   }
   
   public static class Result {
@@ -128,6 +129,7 @@ public class ControlFlowHandler {
     find_if_break(state, d.declList);
     find_set_blocks(state);
     find_pseudo_goto_statements(state, d.declList);
+    wrap_forward_breaks(state);
     find_do_blocks(state, d.declList);
     Collections.sort(state.blocks);
     // DEBUG: print branches stuff
@@ -224,6 +226,21 @@ public class ControlFlowHandler {
       if(boolskip_target == loadboolblock + 2 || boolskip_target == boolskip_target_redirected) {
         skip[loadboolblock - 1] = true;
         final_line = loadboolblock - 2;
+      }
+    }
+    // A stripped RHS consists of real register assignments and calls. Turning
+    // it into SetBlock discards those statements and can return the callee
+    // instead of calling it. Retain a normal if/else for this two-arm shape.
+    if(state.r.isNoDebug && final_line >= line + 2 && !is_jmp(state, line)
+        && target == loadboolblock + 1) {
+      boolean entersFalseArm = false;
+      for(int i = 1; i <= state.code.length; i++) {
+        if(is_jmp_raw(state, i) && state.code.target(i) == loadboolblock) entersFalseArm = true;
+      }
+      if(!entersFalseArm) {
+        skip[loadboolblock - 1] = false;
+        insert_branch(state, new Branch(line, line, Branch.Type.test, c, line + 2, target, null));
+        return;
       }
     }
     boolean inverse = false;
@@ -1033,7 +1050,7 @@ public class ControlFlowHandler {
         }
         
         if(!handled && isbreakgotocandidate && state.function.header.version.usegoto.get() && breakable != null && !breakable.contains(b.targetFirst) && state.resolved[b.targetFirst] != state.resolved[breakable.end]) {
-          Goto block = new Goto(state.function, b.line, b.targetFirst);
+          Block block = forward_jump(state, b.line, b.targetFirst);
           if(!hanging.isEmpty() && hanging.peek().targetSecond == b.targetFirst
             && enclosing_block(state, hanging.peek().line) == enclosing
             && (stack.isEmpty() || hanging.peek().line > stack.peek().line)
@@ -1042,7 +1059,6 @@ public class ControlFlowHandler {
           }
           unredirect_finalsets(state, b.targetFirst, line, 1);
           state.blocks.add(block);
-          state.labels[b.targetFirst] = true;
           remove_branch(state, b);
           handled = true;
         }
@@ -1208,12 +1224,11 @@ public class ControlFlowHandler {
         }
         
         if(!handled && isbreakgotocandidate && (state.function.header.version.usegoto.get() || state.r.isNoDebug)) {
-          Goto block = new Goto(state.function, b.line, b.targetFirst);
+          Block block = forward_jump(state, b.line, b.targetFirst);
           if(!hanging.isEmpty() && hanging.peek().targetSecond == b.targetFirst && enclosing_block(state, hanging.peek().line) == enclosing) {
             hangingResolver.push(b);
           }
           state.blocks.add(block);
-          state.labels[b.targetFirst] = true;
           remove_branch(state, b);
           handled = true;
         }
@@ -1229,7 +1244,8 @@ public class ControlFlowHandler {
       Block breakable = enclosing_breakable_block(state, top.line);
       if(breakable != null && breakable.end == top.targetSecond) {
         if(state.function.header.version.useifbreakrewrite.get() || state.r.isNoDebug) {
-          Block block = new IfThenEndBlock(state.function, state.r, top.cond.inverse(), top.targetFirst - 1, top.targetFirst - 1);
+          Block block = new IfThenEndBlock(state.function, state.r, top.cond.inverse(), top.targetFirst - 1,
+              state.r.isNoDebug ? top.targetFirst : top.targetFirst - 1);
           block.addStatement(new Break(state.function, top.targetFirst - 1, top.targetSecond));
           state.blocks.add(block);
         } else {
@@ -1237,10 +1253,10 @@ public class ControlFlowHandler {
         }
       } else if(state.function.header.version.usegoto.get() || state.r.isNoDebug) {
         if(state.function.header.version.useifgotorewrite.get() != Maybe.NO || state.r.isNoDebug) {
-          Block block = new IfThenEndBlock(state.function, state.r, top.cond.inverse(), top.targetFirst - 1, top.targetFirst - 1);
-          block.addStatement(new Goto(state.function, top.targetFirst - 1, top.targetSecond));
+          Block block = new IfThenEndBlock(state.function, state.r, top.cond.inverse(), top.targetFirst - 1,
+              state.r.isNoDebug ? top.targetFirst : top.targetFirst - 1);
+          block.addStatement(forward_jump(state, top.targetFirst - 1, top.targetSecond));
           state.blocks.add(block);
-          state.labels[top.targetSecond] = true;
         } else {
           // No version supports goto without if break rewrite
           throw new IllegalStateException();
@@ -1251,6 +1267,43 @@ public class ControlFlowHandler {
       remove_branch(state, top);
     }
     while(resolve_if_stack(state, stack, Integer.MAX_VALUE) != null) {}
+  }
+
+  private static Block forward_jump(State state, int line, int target) {
+    if(state.function.header.version.usegoto.get()) {
+      state.labels[target] = true;
+      return new Goto(state.function, line, target);
+    }
+    if(target <= line) throw new IllegalStateException("Cannot reconstruct backward jump without goto");
+    Break result = new Break(state.function, line, target);
+    state.forwardBreaks.add(result);
+    return result;
+  }
+
+  private static void wrap_forward_breaks(State state) {
+    for(Break jump : state.forwardBreaks) {
+      int begin = jump.begin;
+      int end = jump.target;
+      boolean changed;
+      do {
+        changed = false;
+        for(Block block : state.blocks) {
+          if(block.isContainer() && block.contains(begin) && block.end < end && block.begin < begin) {
+            if(block.breakable()) throw new IllegalStateException("Forward jump crosses a loop boundary");
+            begin = block.begin;
+            changed = true;
+          }
+        }
+      } while(changed);
+      boolean wrapped = false;
+      for(Block block : state.blocks) {
+        if(block instanceof OnceLoop && block.begin <= begin && block.end == end) wrapped = true;
+        if(block instanceof Break && block.begin >= begin && block.begin < end
+            && ((Break)block).target > end)
+          throw new IllegalStateException("Forward jump would intercept an outer break");
+      }
+      if(!wrapped) state.blocks.add(new OnceLoop(state.function, begin, end));
+    }
   }
   
   private static void unredirect_finalsets(State state, int target, int line, int begin) {
@@ -1529,6 +1582,13 @@ public class ControlFlowHandler {
   }
   
   private static boolean adjacent(State state, Branch branch0, Branch branch1) {
+    // A stripped TESTSET emits a conditional register copy before its branch.
+    // Combining it with its predecessor would move that copy off its VM edge.
+    if(state.r.isNoDebug && branch1 != null) {
+      Op op = state.code.op(branch1.line);
+      if(op == Op.TESTSET || op == Op.TESTSET54 || op == Op.TEST50
+          && state.code.A(branch1.line) != state.code.B(branch1.line)) return false;
+    }
     if(branch1.finalset != null && branch0.finalset == branch1.finalset) {
       // With redirects, there can be real statements between a finalset and paired branches.
       return true;

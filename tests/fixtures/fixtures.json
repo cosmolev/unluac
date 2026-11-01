@@ -1152,6 +1152,2112 @@
       },
       "baselineStatus": "behavior-pass",
       "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-arithmetic-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": true,
+      "source": "src/arithmetic.lua",
+      "sourceSha256": "a2ba66b5c3ac83c3473b673259beea9fe00d980daedcdcb551587e836519a44b",
+      "input": "inputs/lua-5.0.3-instr32-arithmetic-debug.luac",
+      "inputSha256": "e403c16efceea39bd79758f14b3b0618fea38c9f2e40325e873567c34b1db296",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "-4\t46\n-3\t36\n-2\t28\n-1\t22\n0\t19\n1\t0\n2\t0\n3\t2\n4\t6\n5\t12\n6\t20\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-arithmetic-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": false,
+      "source": "src/arithmetic.lua",
+      "sourceSha256": "a2ba66b5c3ac83c3473b673259beea9fe00d980daedcdcb551587e836519a44b",
+      "input": "inputs/lua-5.0.3-instr32-arithmetic-stripped.luac",
+      "inputSha256": "9fe4b7b78fb98e6590e8e7294b755a067c31a20b57d87c694391cd1e68615c2b",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "-4\t46\n-3\t36\n-2\t28\n-1\t22\n0\t19\n1\t0\n2\t0\n3\t2\n4\t6\n5\t12\n6\t20\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-loops-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": true,
+      "source": "src/lua50-loops.lua",
+      "sourceSha256": "36418bf186c3555fc6245faf6a0581bbf13ec37b4afd50024ab8908d16ed0b50",
+      "input": "inputs/lua-5.0.3-instr32-loops-debug.luac",
+      "inputSha256": "bf4e86dd7dfb8d0d6ad782c16dd9a05e7d4c089ed21f28bf27dce91d502618c4",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t87\n2\t91\n3\t91\n4\t103\n5\t115\n6\t111\n7\t131\n8\t151\n9\t147\n10\t171\n11\t199\n12\t191\n13\t227\n14\t259\n15\t255\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-loops-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": false,
+      "source": "src/lua50-loops.lua",
+      "sourceSha256": "36418bf186c3555fc6245faf6a0581bbf13ec37b4afd50024ab8908d16ed0b50",
+      "input": "inputs/lua-5.0.3-instr32-loops-stripped.luac",
+      "inputSha256": "cd4baac33a0dbfde7c7a85f678158130ad3be7712a26ae69c6fcd7a14717d5ad",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t87\n2\t91\n3\t91\n4\t103\n5\t115\n6\t111\n7\t131\n8\t151\n9\t147\n10\t171\n11\t199\n12\t191\n13\t227\n14\t259\n15\t255\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-closures-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": true,
+      "source": "src/closures.lua",
+      "sourceSha256": "1b49d892818db06c0912558f6fa7be6c8c5aca4d8d015b3d4cfae92dca2fd33d",
+      "input": "inputs/lua-5.0.3-instr32-closures-debug.luac",
+      "inputSha256": "3790b9795b21b56b6ce6bab8ee74044aeaf8be6b6d7035ce68165fc7f92615a9",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\t12\t3\t3\t7\t7\n4\t5\n5\t7\n6\t9\n7\t11\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-closures-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": false,
+      "source": "src/closures.lua",
+      "sourceSha256": "1b49d892818db06c0912558f6fa7be6c8c5aca4d8d015b3d4cfae92dca2fd33d",
+      "input": "inputs/lua-5.0.3-instr32-closures-stripped.luac",
+      "inputSha256": "21f3285aa018a6f0fc4c8c110a185f55083795be20e22fed6ecc0c0d3d88d6ab",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\t12\t3\t3\t7\t7\n4\t5\n5\t7\n6\t9\n7\t11\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-shortcircuit-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": true,
+      "source": "src/shortcircuit.lua",
+      "sourceSha256": "725b1f968c25cd71ac4850d0e8bc0f30671673e74535f2939ab96b216752a3fb",
+      "input": "inputs/lua-5.0.3-instr32-shortcircuit-debug.luac",
+      "inputSha256": "76851d05028df1265c1bdb08ab19ec7036b4ea5e12439ce5019e8d52dd05ce9e",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "17\ttrue\n1\n17\ttrue\n4\n8\ttrue\n6\nfalse\ttrue\tfalse\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-shortcircuit-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": false,
+      "source": "src/shortcircuit.lua",
+      "sourceSha256": "725b1f968c25cd71ac4850d0e8bc0f30671673e74535f2939ab96b216752a3fb",
+      "input": "inputs/lua-5.0.3-instr32-shortcircuit-stripped.luac",
+      "inputSha256": "9cb07974539f42e17be299e5d37a5a0237633949bd798d689af2db0b4d66243b",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "17\ttrue\n1\n17\ttrue\n4\n8\ttrue\n6\nfalse\ttrue\tfalse\n",
+        "stderr": ""
+      },
+      "baselineStatus": "syntax-failure",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-recursion_errors-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": true,
+      "source": "src/recursion_errors.lua",
+      "sourceSha256": "b5d9aefd08fa5a59fee99c0222d64423877944546f4d7c6e0cb84f372b244659",
+      "input": "inputs/lua-5.0.3-instr32-recursion_errors-debug.luac",
+      "inputSha256": "cffc41a4b74456af5da63ed1c9d4ef6580adc456a1f77a8dba06fd64634d27f9",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "0\n1\n1\n2\n3\n5\n8\n13\n21\n34\ntrue\t8\t12\nfalse\tnegative\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-recursion_errors-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": false,
+      "source": "src/recursion_errors.lua",
+      "sourceSha256": "b5d9aefd08fa5a59fee99c0222d64423877944546f4d7c6e0cb84f372b244659",
+      "input": "inputs/lua-5.0.3-instr32-recursion_errors-stripped.luac",
+      "inputSha256": "67973b63a9b043e1399449936fc7b32daa9486b46605e3b97efdeb8bb870f3bf",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "0\n1\n1\n2\n3\n5\n8\n13\n21\n34\ntrue\t8\t12\nfalse\tnegative\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-closures-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": true,
+      "source": "src/closures.lua",
+      "sourceSha256": "1b49d892818db06c0912558f6fa7be6c8c5aca4d8d015b3d4cfae92dca2fd33d",
+      "input": "inputs/lua-5.1.5-native-closures-debug.luac",
+      "inputSha256": "a84aa2dc842689aa5d7651bafcdefddad62138a70733872f39afe0888858b3e8",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\t12\t3\t3\t7\t7\n4\t5\n5\t7\n6\t9\n7\t11\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-closures-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": false,
+      "source": "src/closures.lua",
+      "sourceSha256": "1b49d892818db06c0912558f6fa7be6c8c5aca4d8d015b3d4cfae92dca2fd33d",
+      "input": "inputs/lua-5.1.5-native-closures-stripped.luac",
+      "inputSha256": "8efb1e07d0ac6d0fb96948f26b502a8ab0ac7ee5d6eb477ce7155dc2977870eb",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\t12\t3\t3\t7\t7\n4\t5\n5\t7\n6\t9\n7\t11\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-shortcircuit-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": true,
+      "source": "src/shortcircuit.lua",
+      "sourceSha256": "725b1f968c25cd71ac4850d0e8bc0f30671673e74535f2939ab96b216752a3fb",
+      "input": "inputs/lua-5.1.5-native-shortcircuit-debug.luac",
+      "inputSha256": "61cd4a65dc80ed4267ee2180d77b01ce0e0595a332afb54072095ca9f4460ff9",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "17\ttrue\n1\n17\ttrue\n4\n8\ttrue\n6\nfalse\ttrue\tfalse\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-shortcircuit-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": false,
+      "source": "src/shortcircuit.lua",
+      "sourceSha256": "725b1f968c25cd71ac4850d0e8bc0f30671673e74535f2939ab96b216752a3fb",
+      "input": "inputs/lua-5.1.5-native-shortcircuit-stripped.luac",
+      "inputSha256": "9c2fcd064ac26508f70b69006faf22cc3a2a6f67f1fbf1a135afe6908e6d1f96",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "17\ttrue\n1\n17\ttrue\n4\n8\ttrue\n6\nfalse\ttrue\tfalse\n",
+        "stderr": ""
+      },
+      "baselineStatus": "syntax-failure",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-closures-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": true,
+      "source": "src/closures.lua",
+      "sourceSha256": "1b49d892818db06c0912558f6fa7be6c8c5aca4d8d015b3d4cfae92dca2fd33d",
+      "input": "inputs/lua-5.1.5-size32-closures-debug.luac",
+      "inputSha256": "0f83af106d3baa97e6ad0c52bc6c64142577bb3b3924bad0937bbccbfafeafda",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\t12\t3\t3\t7\t7\n4\t5\n5\t7\n6\t9\n7\t11\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-closures-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": false,
+      "source": "src/closures.lua",
+      "sourceSha256": "1b49d892818db06c0912558f6fa7be6c8c5aca4d8d015b3d4cfae92dca2fd33d",
+      "input": "inputs/lua-5.1.5-size32-closures-stripped.luac",
+      "inputSha256": "d3f859a9e6e4beeeb55241b6e620e213b05143292875e958a85103ab14ee5974",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\t12\t3\t3\t7\t7\n4\t5\n5\t7\n6\t9\n7\t11\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-shortcircuit-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": true,
+      "source": "src/shortcircuit.lua",
+      "sourceSha256": "725b1f968c25cd71ac4850d0e8bc0f30671673e74535f2939ab96b216752a3fb",
+      "input": "inputs/lua-5.1.5-size32-shortcircuit-debug.luac",
+      "inputSha256": "43a487b2c5ee4c05a9f60feb6fabd709311451328b4b25937ce0d7f8a2be5abc",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "17\ttrue\n1\n17\ttrue\n4\n8\ttrue\n6\nfalse\ttrue\tfalse\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-shortcircuit-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": false,
+      "source": "src/shortcircuit.lua",
+      "sourceSha256": "725b1f968c25cd71ac4850d0e8bc0f30671673e74535f2939ab96b216752a3fb",
+      "input": "inputs/lua-5.1.5-size32-shortcircuit-stripped.luac",
+      "inputSha256": "3ba388256390122827b78e2afa73acaea4ded48935887404f84350c308b2f0fb",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "17\ttrue\n1\n17\ttrue\n4\n8\ttrue\n6\nfalse\ttrue\tfalse\n",
+        "stderr": ""
+      },
+      "baselineStatus": "syntax-failure",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-closures-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": true,
+      "source": "src/closures.lua",
+      "sourceSha256": "1b49d892818db06c0912558f6fa7be6c8c5aca4d8d015b3d4cfae92dca2fd33d",
+      "input": "inputs/lua-5.2.4-native-closures-debug.luac",
+      "inputSha256": "9b9912f7aa07bd260bc117695a5acc3c354e74a019fe6edf689ad7ae0fd24127",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\t12\t3\t3\t7\t7\n4\t5\n5\t7\n6\t9\n7\t11\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-closures-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": false,
+      "source": "src/closures.lua",
+      "sourceSha256": "1b49d892818db06c0912558f6fa7be6c8c5aca4d8d015b3d4cfae92dca2fd33d",
+      "input": "inputs/lua-5.2.4-native-closures-stripped.luac",
+      "inputSha256": "dd92faf51531565900d6c73f54cb33a41c7293c86bd7bc62cd17a71b0ef0d43e",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\t12\t3\t3\t7\t7\n4\t5\n5\t7\n6\t9\n7\t11\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-shortcircuit-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": true,
+      "source": "src/shortcircuit.lua",
+      "sourceSha256": "725b1f968c25cd71ac4850d0e8bc0f30671673e74535f2939ab96b216752a3fb",
+      "input": "inputs/lua-5.2.4-native-shortcircuit-debug.luac",
+      "inputSha256": "40fdf84b00691199912ad36b13caa603f740b0c22d571f3c871ca37e49e69199",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "17\ttrue\n1\n17\ttrue\n4\n8\ttrue\n6\nfalse\ttrue\tfalse\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-shortcircuit-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": false,
+      "source": "src/shortcircuit.lua",
+      "sourceSha256": "725b1f968c25cd71ac4850d0e8bc0f30671673e74535f2939ab96b216752a3fb",
+      "input": "inputs/lua-5.2.4-native-shortcircuit-stripped.luac",
+      "inputSha256": "c276a8149d8e918cc4f66484b8330d62b4d7f1a15bb689fe0c8c691a18b93dc3",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "17\ttrue\n1\n17\ttrue\n4\n8\ttrue\n6\nfalse\ttrue\tfalse\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-closures-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": true,
+      "source": "src/closures.lua",
+      "sourceSha256": "1b49d892818db06c0912558f6fa7be6c8c5aca4d8d015b3d4cfae92dca2fd33d",
+      "input": "inputs/lua-5.3.6-native-closures-debug.luac",
+      "inputSha256": "c0dbd0b964c604c39f8e9e10f1f952aa7c7f311f451df71a7e0ad8114eb115db",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\t12\t3\t3\t7\t7\n4\t5\n5\t7\n6\t9\n7\t11\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-closures-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": false,
+      "source": "src/closures.lua",
+      "sourceSha256": "1b49d892818db06c0912558f6fa7be6c8c5aca4d8d015b3d4cfae92dca2fd33d",
+      "input": "inputs/lua-5.3.6-native-closures-stripped.luac",
+      "inputSha256": "8e4a2a0c2cde72b4d13d85f6661d63b46457c4c7c5304ed0d93d3ee521191e59",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\t12\t3\t3\t7\t7\n4\t5\n5\t7\n6\t9\n7\t11\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-shortcircuit-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": true,
+      "source": "src/shortcircuit.lua",
+      "sourceSha256": "725b1f968c25cd71ac4850d0e8bc0f30671673e74535f2939ab96b216752a3fb",
+      "input": "inputs/lua-5.3.6-native-shortcircuit-debug.luac",
+      "inputSha256": "6fd7cd2442554140b3bceacebf1ea46d860360ad1fe01d18ef0e46897de80ca7",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "17\ttrue\n1\n17\ttrue\n4\n8\ttrue\n6\nfalse\ttrue\tfalse\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-shortcircuit-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": false,
+      "source": "src/shortcircuit.lua",
+      "sourceSha256": "725b1f968c25cd71ac4850d0e8bc0f30671673e74535f2939ab96b216752a3fb",
+      "input": "inputs/lua-5.3.6-native-shortcircuit-stripped.luac",
+      "inputSha256": "5ebf35876eb8916398c953cb901de6b228f8e0ff4014d2e59b1093516290c768",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "17\ttrue\n1\n17\ttrue\n4\n8\ttrue\n6\nfalse\ttrue\tfalse\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-closures-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/closures.lua",
+      "sourceSha256": "1b49d892818db06c0912558f6fa7be6c8c5aca4d8d015b3d4cfae92dca2fd33d",
+      "input": "inputs/lua-5.4.9-native-closures-debug.luac",
+      "inputSha256": "ad4d976bd2ab7a72e1f72989f966d8d5bb05ed83b15eac1d16e1eef47e29a6b5",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\t12\t3\t3\t7\t7\n4\t5\n5\t7\n6\t9\n7\t11\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-closures-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/closures.lua",
+      "sourceSha256": "1b49d892818db06c0912558f6fa7be6c8c5aca4d8d015b3d4cfae92dca2fd33d",
+      "input": "inputs/lua-5.4.9-native-closures-stripped.luac",
+      "inputSha256": "105257d32acc8a7f3ce8228ee8fcb6ee425a501c5bf0182265eb595dd6e4ed2a",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\t12\t3\t3\t7\t7\n4\t5\n5\t7\n6\t9\n7\t11\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-shortcircuit-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/shortcircuit.lua",
+      "sourceSha256": "725b1f968c25cd71ac4850d0e8bc0f30671673e74535f2939ab96b216752a3fb",
+      "input": "inputs/lua-5.4.9-native-shortcircuit-debug.luac",
+      "inputSha256": "d114d0e9d638f7cc88cb5398188cc75b61a86b7a4370ed469cc0cbc183307b4f",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "17\ttrue\n1\n17\ttrue\n4\n8\ttrue\n6\nfalse\ttrue\tfalse\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-shortcircuit-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/shortcircuit.lua",
+      "sourceSha256": "725b1f968c25cd71ac4850d0e8bc0f30671673e74535f2939ab96b216752a3fb",
+      "input": "inputs/lua-5.4.9-native-shortcircuit-stripped.luac",
+      "inputSha256": "1d17f6b90eb518d66e21f07a2271d1c482063f6d720ee96c8b0360ffe47ab339",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "17\ttrue\n1\n17\ttrue\n4\n8\ttrue\n6\nfalse\ttrue\tfalse\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-feature-5.4.9-native-close-debug",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/feature-close.lua",
+      "sourceSha256": "f83f0976908b95b9997086775fa25695b1bfba23300428a6a038547713d40002",
+      "input": "inputs/lua-feature-5.4.9-native-close-debug.luac",
+      "inputSha256": "83e6f7bd8007ce64a1e7bb3dd157ac1ee48036e526c4ac1946cb76009865143e",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "8\t1\nfalse\tbad\t2\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-pass",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-feature-5.4.9-native-close-stripped",
+      "group": "original-benchmark",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/feature-close.lua",
+      "sourceSha256": "f83f0976908b95b9997086775fa25695b1bfba23300428a6a038547713d40002",
+      "input": "inputs/lua-feature-5.4.9-native-close-stripped.luac",
+      "inputSha256": "e3fcc72d12936dfcf3f7e7d681fdda0e263e872592b52b84be2de77b6acf3788",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "8\t1\nfalse\tbad\t2\n",
+        "stderr": ""
+      },
+      "baselineStatus": "behavior-mismatch",
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-boolean-effects-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": true,
+      "source": "src/remaining-boolean-effects.lua",
+      "sourceSha256": "b8ddb063010a9855790e5346cff375fad5131f7ef7dd37e04070d6ecbe688fde",
+      "input": "inputs/lua-5.0.3-instr32-remaining-boolean-effects-debug.luac",
+      "inputSha256": "be86fd747042b141bab7667952369c0f22a94341ef2a4575c7f0da753fc4422a",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\ttrue\tfalse\tac\n9\tfalse\t9\tabcedfg\n11\tnil\t11\tabcedfg\n8\t8\t8\tabedf\n0\t0\t0\tabedf\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-boolean-effects-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": false,
+      "source": "src/remaining-boolean-effects.lua",
+      "sourceSha256": "b8ddb063010a9855790e5346cff375fad5131f7ef7dd37e04070d6ecbe688fde",
+      "input": "inputs/lua-5.0.3-instr32-remaining-boolean-effects-stripped.luac",
+      "inputSha256": "980c533b2a46fb4f84ef106312acc9041996cf517b60733c4c400cc5cf25db6b",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\ttrue\tfalse\tac\n9\tfalse\t9\tabcedfg\n11\tnil\t11\tabcedfg\n8\t8\t8\tabedf\n0\t0\t0\tabedf\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-boolean-effects-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": true,
+      "source": "src/remaining-boolean-effects.lua",
+      "sourceSha256": "b8ddb063010a9855790e5346cff375fad5131f7ef7dd37e04070d6ecbe688fde",
+      "input": "inputs/lua-5.1.5-native-remaining-boolean-effects-debug.luac",
+      "inputSha256": "148ea1a04594263a3813fe1b129f4ad69260f7bca6e18fe0351bbe520469c7da",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\ttrue\tfalse\tac\n9\tfalse\t9\tabcedfg\n11\tnil\t11\tabcedfg\n8\t8\t8\tabedf\n0\t0\t0\tabedf\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-boolean-effects-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": false,
+      "source": "src/remaining-boolean-effects.lua",
+      "sourceSha256": "b8ddb063010a9855790e5346cff375fad5131f7ef7dd37e04070d6ecbe688fde",
+      "input": "inputs/lua-5.1.5-native-remaining-boolean-effects-stripped.luac",
+      "inputSha256": "81240d75ec845960384d55372509e1146861e25b5ecb643cd34fc4eb6d3cc5dd",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\ttrue\tfalse\tac\n9\tfalse\t9\tabcedfg\n11\tnil\t11\tabcedfg\n8\t8\t8\tabedf\n0\t0\t0\tabedf\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-boolean-effects-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": true,
+      "source": "src/remaining-boolean-effects.lua",
+      "sourceSha256": "b8ddb063010a9855790e5346cff375fad5131f7ef7dd37e04070d6ecbe688fde",
+      "input": "inputs/lua-5.1.5-size32-remaining-boolean-effects-debug.luac",
+      "inputSha256": "d520af50b90a6599ccb982e0d7dda6359a77f754c29fedabad6d6e9d1f5cd49c",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\ttrue\tfalse\tac\n9\tfalse\t9\tabcedfg\n11\tnil\t11\tabcedfg\n8\t8\t8\tabedf\n0\t0\t0\tabedf\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-boolean-effects-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": false,
+      "source": "src/remaining-boolean-effects.lua",
+      "sourceSha256": "b8ddb063010a9855790e5346cff375fad5131f7ef7dd37e04070d6ecbe688fde",
+      "input": "inputs/lua-5.1.5-size32-remaining-boolean-effects-stripped.luac",
+      "inputSha256": "0a7833e6a79fb20e0969dd5f91d1ce8afb0bb6b8691f3c1c0d6b83e42c39c95d",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\ttrue\tfalse\tac\n9\tfalse\t9\tabcedfg\n11\tnil\t11\tabcedfg\n8\t8\t8\tabedf\n0\t0\t0\tabedf\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-boolean-effects-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": true,
+      "source": "src/remaining-boolean-effects.lua",
+      "sourceSha256": "b8ddb063010a9855790e5346cff375fad5131f7ef7dd37e04070d6ecbe688fde",
+      "input": "inputs/lua-5.2.4-native-remaining-boolean-effects-debug.luac",
+      "inputSha256": "1d9f0f641bd15173cf8ed87d7cfe86c323023d341d38ad9c443e147abcdf3fe1",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\ttrue\tfalse\tac\n9\tfalse\t9\tabcedfg\n11\tnil\t11\tabcedfg\n8\t8\t8\tabedf\n0\t0\t0\tabedf\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-boolean-effects-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": false,
+      "source": "src/remaining-boolean-effects.lua",
+      "sourceSha256": "b8ddb063010a9855790e5346cff375fad5131f7ef7dd37e04070d6ecbe688fde",
+      "input": "inputs/lua-5.2.4-native-remaining-boolean-effects-stripped.luac",
+      "inputSha256": "237abdeb764e42697d2c2f6db35378d90d19c7a95037d4570e13dabdcf3b5037",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\ttrue\tfalse\tac\n9\tfalse\t9\tabcedfg\n11\tnil\t11\tabcedfg\n8\t8\t8\tabedf\n0\t0\t0\tabedf\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-boolean-effects-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": true,
+      "source": "src/remaining-boolean-effects.lua",
+      "sourceSha256": "b8ddb063010a9855790e5346cff375fad5131f7ef7dd37e04070d6ecbe688fde",
+      "input": "inputs/lua-5.3.6-native-remaining-boolean-effects-debug.luac",
+      "inputSha256": "014cb0bd65d70a79ecaafd6d9337c095fbee5f0cad46ea829a8fbbfb346eb8d6",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\ttrue\tfalse\tac\n9\tfalse\t9\tabcedfg\n11\tnil\t11\tabcedfg\n8\t8\t8\tabedf\n0\t0\t0\tabedf\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-boolean-effects-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": false,
+      "source": "src/remaining-boolean-effects.lua",
+      "sourceSha256": "b8ddb063010a9855790e5346cff375fad5131f7ef7dd37e04070d6ecbe688fde",
+      "input": "inputs/lua-5.3.6-native-remaining-boolean-effects-stripped.luac",
+      "inputSha256": "54d0c166ebccb079e3dd63719f22fab9d3acf9cf9c738f95eaa5fa2444ee5874",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\ttrue\tfalse\tac\n9\tfalse\t9\tabcedfg\n11\tnil\t11\tabcedfg\n8\t8\t8\tabedf\n0\t0\t0\tabedf\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-boolean-effects-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/remaining-boolean-effects.lua",
+      "sourceSha256": "b8ddb063010a9855790e5346cff375fad5131f7ef7dd37e04070d6ecbe688fde",
+      "input": "inputs/lua-5.4.9-native-remaining-boolean-effects-debug.luac",
+      "inputSha256": "279537092988351089bc9cc9437a03d24d00e112491eea655b73e48e09dc6b7b",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\ttrue\tfalse\tac\n9\tfalse\t9\tabcedfg\n11\tnil\t11\tabcedfg\n8\t8\t8\tabedf\n0\t0\t0\tabedf\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-boolean-effects-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/remaining-boolean-effects.lua",
+      "sourceSha256": "b8ddb063010a9855790e5346cff375fad5131f7ef7dd37e04070d6ecbe688fde",
+      "input": "inputs/lua-5.4.9-native-remaining-boolean-effects-stripped.luac",
+      "inputSha256": "6ace340ad2277382700d1b0f56c8a0aa2a9565f74d4b2386a38643eae1ae05e3",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\ttrue\tfalse\tac\n9\tfalse\t9\tabcedfg\n11\tnil\t11\tabcedfg\n8\t8\t8\tabedf\n0\t0\t0\tabedf\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-boolean-loop-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": true,
+      "source": "src/remaining-boolean-loop.lua",
+      "sourceSha256": "169dc173f2b2e8ffc314ef40e165593bb92c46f495493848d756041123d2a38c",
+      "input": "inputs/lua-5.0.3-instr32-remaining-boolean-loop-debug.luac",
+      "inputSha256": "fe4acd84d90607f7eaa779be9b93c564915970c1228d93c60f6de5cc7caae013",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t5\t5\n2\t5\t11\n3\t2\t14\n4\t2\t17\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-boolean-loop-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": false,
+      "source": "src/remaining-boolean-loop.lua",
+      "sourceSha256": "169dc173f2b2e8ffc314ef40e165593bb92c46f495493848d756041123d2a38c",
+      "input": "inputs/lua-5.0.3-instr32-remaining-boolean-loop-stripped.luac",
+      "inputSha256": "f234e1d6851d981484418eb32f6491bbdde6c47302d6edf70943e933930c0298",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t5\t5\n2\t5\t11\n3\t2\t14\n4\t2\t17\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-boolean-loop-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": true,
+      "source": "src/remaining-boolean-loop.lua",
+      "sourceSha256": "169dc173f2b2e8ffc314ef40e165593bb92c46f495493848d756041123d2a38c",
+      "input": "inputs/lua-5.1.5-native-remaining-boolean-loop-debug.luac",
+      "inputSha256": "6433b8cfdccba63cbc5746b6d40665863704173f35626c921b70482a4e5d1191",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t5\t5\n2\t5\t11\n3\t2\t14\n4\t2\t17\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-boolean-loop-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": false,
+      "source": "src/remaining-boolean-loop.lua",
+      "sourceSha256": "169dc173f2b2e8ffc314ef40e165593bb92c46f495493848d756041123d2a38c",
+      "input": "inputs/lua-5.1.5-native-remaining-boolean-loop-stripped.luac",
+      "inputSha256": "4363dea74050893e403f57253fe0ee50e769befc4c30ab89cc644d3bb7f091c7",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t5\t5\n2\t5\t11\n3\t2\t14\n4\t2\t17\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-boolean-loop-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": true,
+      "source": "src/remaining-boolean-loop.lua",
+      "sourceSha256": "169dc173f2b2e8ffc314ef40e165593bb92c46f495493848d756041123d2a38c",
+      "input": "inputs/lua-5.1.5-size32-remaining-boolean-loop-debug.luac",
+      "inputSha256": "1c11b5688324bac0e3a912608d74102205382d0e117775d365858e691cf8697e",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t5\t5\n2\t5\t11\n3\t2\t14\n4\t2\t17\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-boolean-loop-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": false,
+      "source": "src/remaining-boolean-loop.lua",
+      "sourceSha256": "169dc173f2b2e8ffc314ef40e165593bb92c46f495493848d756041123d2a38c",
+      "input": "inputs/lua-5.1.5-size32-remaining-boolean-loop-stripped.luac",
+      "inputSha256": "c8249a79878650a54883b01c0c770847e3096b09e94d52c6b9a2622ab6de8536",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t5\t5\n2\t5\t11\n3\t2\t14\n4\t2\t17\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-boolean-loop-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": true,
+      "source": "src/remaining-boolean-loop.lua",
+      "sourceSha256": "169dc173f2b2e8ffc314ef40e165593bb92c46f495493848d756041123d2a38c",
+      "input": "inputs/lua-5.2.4-native-remaining-boolean-loop-debug.luac",
+      "inputSha256": "c4a460d564f8a6d1bf1dc9109c2e5a41a214879645551a71fab7519ec4d198c7",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t5\t5\n2\t5\t11\n3\t2\t14\n4\t2\t17\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-boolean-loop-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": false,
+      "source": "src/remaining-boolean-loop.lua",
+      "sourceSha256": "169dc173f2b2e8ffc314ef40e165593bb92c46f495493848d756041123d2a38c",
+      "input": "inputs/lua-5.2.4-native-remaining-boolean-loop-stripped.luac",
+      "inputSha256": "3532657cb29d4878d41c86c64211476290cd5e8c203ebad34acebd559767a000",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t5\t5\n2\t5\t11\n3\t2\t14\n4\t2\t17\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-boolean-loop-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": true,
+      "source": "src/remaining-boolean-loop.lua",
+      "sourceSha256": "169dc173f2b2e8ffc314ef40e165593bb92c46f495493848d756041123d2a38c",
+      "input": "inputs/lua-5.3.6-native-remaining-boolean-loop-debug.luac",
+      "inputSha256": "d07711ffe1eb053707f3f415e001351fcd1dbefdd47bcadd3c4db385e6114c48",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t5\t5\n2\t5\t11\n3\t2\t14\n4\t2\t17\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-boolean-loop-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": false,
+      "source": "src/remaining-boolean-loop.lua",
+      "sourceSha256": "169dc173f2b2e8ffc314ef40e165593bb92c46f495493848d756041123d2a38c",
+      "input": "inputs/lua-5.3.6-native-remaining-boolean-loop-stripped.luac",
+      "inputSha256": "40241358a682d574f0b6985397bd6ad9e9919d07cfce649c954097328efe93a1",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t5\t5\n2\t5\t11\n3\t2\t14\n4\t2\t17\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-boolean-loop-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/remaining-boolean-loop.lua",
+      "sourceSha256": "169dc173f2b2e8ffc314ef40e165593bb92c46f495493848d756041123d2a38c",
+      "input": "inputs/lua-5.4.9-native-remaining-boolean-loop-debug.luac",
+      "inputSha256": "c10dc146f3957efeb5ffdf4ac566a82ab6daa971837623ae20c40a7b7999c494",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t5\t5\n2\t5\t11\n3\t2\t14\n4\t2\t17\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-boolean-loop-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/remaining-boolean-loop.lua",
+      "sourceSha256": "169dc173f2b2e8ffc314ef40e165593bb92c46f495493848d756041123d2a38c",
+      "input": "inputs/lua-5.4.9-native-remaining-boolean-loop-stripped.luac",
+      "inputSha256": "2e505b28fdf9d1f9319700fda37f42303c66212c5bd43de633266163342d0b3e",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "1\t5\t5\n2\t5\t11\n3\t2\t14\n4\t2\t17\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-boolean-values-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": true,
+      "source": "src/remaining-boolean-values.lua",
+      "sourceSha256": "eb7663dde0fabfc28894a1b689f46153320c4320fc694f4480adb6ba8ab8f1ae",
+      "input": "inputs/lua-5.0.3-instr32-remaining-boolean-values-debug.luac",
+      "inputSha256": "5ce4da68eeade5a6bb18e291e243e912c9258b401fe9a05b23b0f7af58c7dfc0",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "false\tfalse\t9\ttrue\nfalse\t3\t9\ttrue\nnil\tfalse\t9\ttrue\nnil\t3\t9\ttrue\nfalse\ttrue\t9\tfalse\nnil\ttrue\t9\tnil\n8\ttrue\t8\t8\nfalse\t0\t9\tfalse\n0\t\t0\t0\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-boolean-values-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": false,
+      "source": "src/remaining-boolean-values.lua",
+      "sourceSha256": "eb7663dde0fabfc28894a1b689f46153320c4320fc694f4480adb6ba8ab8f1ae",
+      "input": "inputs/lua-5.0.3-instr32-remaining-boolean-values-stripped.luac",
+      "inputSha256": "7e14f76032284217ab3e0647a341b5932c49f8f338c33f185e76e4358c4246d8",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "false\tfalse\t9\ttrue\nfalse\t3\t9\ttrue\nnil\tfalse\t9\ttrue\nnil\t3\t9\ttrue\nfalse\ttrue\t9\tfalse\nnil\ttrue\t9\tnil\n8\ttrue\t8\t8\nfalse\t0\t9\tfalse\n0\t\t0\t0\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-boolean-values-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": true,
+      "source": "src/remaining-boolean-values.lua",
+      "sourceSha256": "eb7663dde0fabfc28894a1b689f46153320c4320fc694f4480adb6ba8ab8f1ae",
+      "input": "inputs/lua-5.1.5-native-remaining-boolean-values-debug.luac",
+      "inputSha256": "8d553da2ddc9f50976e1ce92225160dbcc164ac699c7f4de6232932e631ed6aa",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "false\tfalse\t9\ttrue\nfalse\t3\t9\ttrue\nnil\tfalse\t9\ttrue\nnil\t3\t9\ttrue\nfalse\ttrue\t9\tfalse\nnil\ttrue\t9\tnil\n8\ttrue\t8\t8\nfalse\t0\t9\tfalse\n0\t\t0\t0\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-boolean-values-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": false,
+      "source": "src/remaining-boolean-values.lua",
+      "sourceSha256": "eb7663dde0fabfc28894a1b689f46153320c4320fc694f4480adb6ba8ab8f1ae",
+      "input": "inputs/lua-5.1.5-native-remaining-boolean-values-stripped.luac",
+      "inputSha256": "0f185db0ecf5f1c893339e50c446e4106c39e54b0aefb48bff02b8d7e4fb1ffe",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "false\tfalse\t9\ttrue\nfalse\t3\t9\ttrue\nnil\tfalse\t9\ttrue\nnil\t3\t9\ttrue\nfalse\ttrue\t9\tfalse\nnil\ttrue\t9\tnil\n8\ttrue\t8\t8\nfalse\t0\t9\tfalse\n0\t\t0\t0\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-boolean-values-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": true,
+      "source": "src/remaining-boolean-values.lua",
+      "sourceSha256": "eb7663dde0fabfc28894a1b689f46153320c4320fc694f4480adb6ba8ab8f1ae",
+      "input": "inputs/lua-5.1.5-size32-remaining-boolean-values-debug.luac",
+      "inputSha256": "9780bd7ec8a488f9f7799fa8ab34acca27e000b8a86dd45fa295439c575b4d27",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "false\tfalse\t9\ttrue\nfalse\t3\t9\ttrue\nnil\tfalse\t9\ttrue\nnil\t3\t9\ttrue\nfalse\ttrue\t9\tfalse\nnil\ttrue\t9\tnil\n8\ttrue\t8\t8\nfalse\t0\t9\tfalse\n0\t\t0\t0\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-boolean-values-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": false,
+      "source": "src/remaining-boolean-values.lua",
+      "sourceSha256": "eb7663dde0fabfc28894a1b689f46153320c4320fc694f4480adb6ba8ab8f1ae",
+      "input": "inputs/lua-5.1.5-size32-remaining-boolean-values-stripped.luac",
+      "inputSha256": "4dc0b885466eefff079b8dbd8cff4474aa97d754b07bd304f026bb32b6d19d0b",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "false\tfalse\t9\ttrue\nfalse\t3\t9\ttrue\nnil\tfalse\t9\ttrue\nnil\t3\t9\ttrue\nfalse\ttrue\t9\tfalse\nnil\ttrue\t9\tnil\n8\ttrue\t8\t8\nfalse\t0\t9\tfalse\n0\t\t0\t0\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-boolean-values-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": true,
+      "source": "src/remaining-boolean-values.lua",
+      "sourceSha256": "eb7663dde0fabfc28894a1b689f46153320c4320fc694f4480adb6ba8ab8f1ae",
+      "input": "inputs/lua-5.2.4-native-remaining-boolean-values-debug.luac",
+      "inputSha256": "986882212a5222bff6dca8866d16b97ec165aac562ff08309d8c20dffc7faff6",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "false\tfalse\t9\ttrue\nfalse\t3\t9\ttrue\nnil\tfalse\t9\ttrue\nnil\t3\t9\ttrue\nfalse\ttrue\t9\tfalse\nnil\ttrue\t9\tnil\n8\ttrue\t8\t8\nfalse\t0\t9\tfalse\n0\t\t0\t0\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-boolean-values-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": false,
+      "source": "src/remaining-boolean-values.lua",
+      "sourceSha256": "eb7663dde0fabfc28894a1b689f46153320c4320fc694f4480adb6ba8ab8f1ae",
+      "input": "inputs/lua-5.2.4-native-remaining-boolean-values-stripped.luac",
+      "inputSha256": "42f6c186bf8a943a0946a4f5e66ffbc0846e052522182f02c373ee03dbb8ea8f",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "false\tfalse\t9\ttrue\nfalse\t3\t9\ttrue\nnil\tfalse\t9\ttrue\nnil\t3\t9\ttrue\nfalse\ttrue\t9\tfalse\nnil\ttrue\t9\tnil\n8\ttrue\t8\t8\nfalse\t0\t9\tfalse\n0\t\t0\t0\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-boolean-values-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": true,
+      "source": "src/remaining-boolean-values.lua",
+      "sourceSha256": "eb7663dde0fabfc28894a1b689f46153320c4320fc694f4480adb6ba8ab8f1ae",
+      "input": "inputs/lua-5.3.6-native-remaining-boolean-values-debug.luac",
+      "inputSha256": "5838efdebd6edd73314f71813de5c397b31e516f9375e2f661bb24a530ec9075",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "false\tfalse\t9\ttrue\nfalse\t3\t9\ttrue\nnil\tfalse\t9\ttrue\nnil\t3\t9\ttrue\nfalse\ttrue\t9\tfalse\nnil\ttrue\t9\tnil\n8\ttrue\t8\t8\nfalse\t0\t9\tfalse\n0\t\t0\t0\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-boolean-values-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": false,
+      "source": "src/remaining-boolean-values.lua",
+      "sourceSha256": "eb7663dde0fabfc28894a1b689f46153320c4320fc694f4480adb6ba8ab8f1ae",
+      "input": "inputs/lua-5.3.6-native-remaining-boolean-values-stripped.luac",
+      "inputSha256": "05ee361ae3e0b1481e4c66c74a0e0aabca6a944da5feb5a2c4f47cead389ff55",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "false\tfalse\t9\ttrue\nfalse\t3\t9\ttrue\nnil\tfalse\t9\ttrue\nnil\t3\t9\ttrue\nfalse\ttrue\t9\tfalse\nnil\ttrue\t9\tnil\n8\ttrue\t8\t8\nfalse\t0\t9\tfalse\n0\t\t0\t0\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-boolean-values-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/remaining-boolean-values.lua",
+      "sourceSha256": "eb7663dde0fabfc28894a1b689f46153320c4320fc694f4480adb6ba8ab8f1ae",
+      "input": "inputs/lua-5.4.9-native-remaining-boolean-values-debug.luac",
+      "inputSha256": "34fc536826c16d900af2963c9c6777f70d7594e8c53dfddf87be1e63600216bf",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "false\tfalse\t9\ttrue\nfalse\t3\t9\ttrue\nnil\tfalse\t9\ttrue\nnil\t3\t9\ttrue\nfalse\ttrue\t9\tfalse\nnil\ttrue\t9\tnil\n8\ttrue\t8\t8\nfalse\t0\t9\tfalse\n0\t\t0\t0\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-boolean-values-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/remaining-boolean-values.lua",
+      "sourceSha256": "eb7663dde0fabfc28894a1b689f46153320c4320fc694f4480adb6ba8ab8f1ae",
+      "input": "inputs/lua-5.4.9-native-remaining-boolean-values-stripped.luac",
+      "inputSha256": "c528c5a243f3875d6f269307ef5325e5a37653084edc35ed1f9c1103f4820e52",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "false\tfalse\t9\ttrue\nfalse\t3\t9\ttrue\nnil\tfalse\t9\ttrue\nnil\t3\t9\ttrue\nfalse\ttrue\t9\tfalse\nnil\ttrue\t9\tnil\n8\ttrue\t8\t8\nfalse\t0\t9\tfalse\n0\t\t0\t0\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-capture-break-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": true,
+      "source": "src/remaining-capture-break.lua",
+      "sourceSha256": "e3074f45e624062e90afe59c79d86c0c8414fd6d3c1f899296d752c08b1014d4",
+      "input": "inputs/lua-5.0.3-instr32-remaining-capture-break-debug.luac",
+      "inputSha256": "025ec81f61926c92b3fa0ab32cb643fed06e1ab137b6a2eea8023c5d080fea8b",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "13\t24\n18\t30\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-capture-break-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": false,
+      "source": "src/remaining-capture-break.lua",
+      "sourceSha256": "e3074f45e624062e90afe59c79d86c0c8414fd6d3c1f899296d752c08b1014d4",
+      "input": "inputs/lua-5.0.3-instr32-remaining-capture-break-stripped.luac",
+      "inputSha256": "90591d1e3998b4e953a03678980da91a1de2b9459c20a2d2addd5e8a872ca3a0",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "13\t24\n18\t30\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-capture-break-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": true,
+      "source": "src/remaining-capture-break.lua",
+      "sourceSha256": "e3074f45e624062e90afe59c79d86c0c8414fd6d3c1f899296d752c08b1014d4",
+      "input": "inputs/lua-5.1.5-native-remaining-capture-break-debug.luac",
+      "inputSha256": "4ca0a79f072fe0982fd1044ba47d559d6dab3a6990fca5153c7d9edb7cfa8399",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "13\t24\n18\t30\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-capture-break-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": false,
+      "source": "src/remaining-capture-break.lua",
+      "sourceSha256": "e3074f45e624062e90afe59c79d86c0c8414fd6d3c1f899296d752c08b1014d4",
+      "input": "inputs/lua-5.1.5-native-remaining-capture-break-stripped.luac",
+      "inputSha256": "cdb275ff59d31135a0ef1f74134063ce876212846867231106c2b22cfc019181",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "13\t24\n18\t30\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-capture-break-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": true,
+      "source": "src/remaining-capture-break.lua",
+      "sourceSha256": "e3074f45e624062e90afe59c79d86c0c8414fd6d3c1f899296d752c08b1014d4",
+      "input": "inputs/lua-5.1.5-size32-remaining-capture-break-debug.luac",
+      "inputSha256": "b78b611088a771394573a48144ed251b3182b5485f08e822b32884a99314fa01",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "13\t24\n18\t30\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-capture-break-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": false,
+      "source": "src/remaining-capture-break.lua",
+      "sourceSha256": "e3074f45e624062e90afe59c79d86c0c8414fd6d3c1f899296d752c08b1014d4",
+      "input": "inputs/lua-5.1.5-size32-remaining-capture-break-stripped.luac",
+      "inputSha256": "165c7962c418a0c521df297fb608db86fc77ff365264af6ce7901e60300a801e",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "13\t24\n18\t30\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-capture-break-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": true,
+      "source": "src/remaining-capture-break.lua",
+      "sourceSha256": "e3074f45e624062e90afe59c79d86c0c8414fd6d3c1f899296d752c08b1014d4",
+      "input": "inputs/lua-5.2.4-native-remaining-capture-break-debug.luac",
+      "inputSha256": "78153419d0b8e00a13a3c77e46448cd346cf9e205a3b66413d3d7e33456f5ba4",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "13\t24\n18\t30\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-capture-break-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": false,
+      "source": "src/remaining-capture-break.lua",
+      "sourceSha256": "e3074f45e624062e90afe59c79d86c0c8414fd6d3c1f899296d752c08b1014d4",
+      "input": "inputs/lua-5.2.4-native-remaining-capture-break-stripped.luac",
+      "inputSha256": "b21a562660740829c66ac0c7af37297a54ccf96448d591fb92f6c6e2ba1e6dd5",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "13\t24\n18\t30\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-capture-break-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": true,
+      "source": "src/remaining-capture-break.lua",
+      "sourceSha256": "e3074f45e624062e90afe59c79d86c0c8414fd6d3c1f899296d752c08b1014d4",
+      "input": "inputs/lua-5.3.6-native-remaining-capture-break-debug.luac",
+      "inputSha256": "7b62a677d5185fa10fd2ef3ab9c466a5c8120b9543ecc52ae5330612d9c09004",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "13\t24\n18\t30\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-capture-break-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": false,
+      "source": "src/remaining-capture-break.lua",
+      "sourceSha256": "e3074f45e624062e90afe59c79d86c0c8414fd6d3c1f899296d752c08b1014d4",
+      "input": "inputs/lua-5.3.6-native-remaining-capture-break-stripped.luac",
+      "inputSha256": "001fcf4fe8be3a53c809eafb26f034eee513221fc0234af1ec1ee17ea3a36ae7",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "13\t24\n18\t30\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-capture-break-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/remaining-capture-break.lua",
+      "sourceSha256": "e3074f45e624062e90afe59c79d86c0c8414fd6d3c1f899296d752c08b1014d4",
+      "input": "inputs/lua-5.4.9-native-remaining-capture-break-debug.luac",
+      "inputSha256": "ce8dd1ed8c93b43c5e1008e8967fcc61cece4a5d3774b572c7ceeaa784c21f7e",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "13\t24\n18\t30\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-capture-break-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/remaining-capture-break.lua",
+      "sourceSha256": "e3074f45e624062e90afe59c79d86c0c8414fd6d3c1f899296d752c08b1014d4",
+      "input": "inputs/lua-5.4.9-native-remaining-capture-break-stripped.luac",
+      "inputSha256": "66413af9b3521d001e02f880faef8c3e99f62cc3c15ca202400de89cb70ba5bb",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "13\t24\n18\t30\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-capture-scopes-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": true,
+      "source": "src/remaining-capture-scopes.lua",
+      "sourceSha256": "4d2197920361053ca19e01f362e884b9403e839686306633d0eff5a2c313fe51",
+      "input": "inputs/lua-5.0.3-instr32-remaining-capture-scopes-debug.luac",
+      "inputSha256": "853fc4055a6937385e0e6d6e10900621d7c1ca2c88e1426da63088e5bba13fbf",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "999\n5\t11\n8\t12\n9\t13\n11\t14\n4\t15\n7\t16\n8\t17\n10\t18\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-capture-scopes-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": false,
+      "source": "src/remaining-capture-scopes.lua",
+      "sourceSha256": "4d2197920361053ca19e01f362e884b9403e839686306633d0eff5a2c313fe51",
+      "input": "inputs/lua-5.0.3-instr32-remaining-capture-scopes-stripped.luac",
+      "inputSha256": "de66ebf6a316ab6f49c39b325d835ca1367db9f56179b981e031bf151638dbf1",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "999\n5\t11\n8\t12\n9\t13\n11\t14\n4\t15\n7\t16\n8\t17\n10\t18\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-capture-scopes-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": true,
+      "source": "src/remaining-capture-scopes.lua",
+      "sourceSha256": "4d2197920361053ca19e01f362e884b9403e839686306633d0eff5a2c313fe51",
+      "input": "inputs/lua-5.1.5-native-remaining-capture-scopes-debug.luac",
+      "inputSha256": "7cffd1c3ffd0f504b8166583c0d9c0183d42e79d2b8fc9056889f2c7e14204c5",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "999\n5\t11\n8\t12\n9\t13\n11\t14\n4\t15\n7\t16\n8\t17\n10\t18\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-capture-scopes-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": false,
+      "source": "src/remaining-capture-scopes.lua",
+      "sourceSha256": "4d2197920361053ca19e01f362e884b9403e839686306633d0eff5a2c313fe51",
+      "input": "inputs/lua-5.1.5-native-remaining-capture-scopes-stripped.luac",
+      "inputSha256": "441e390ed1d8108358043ba784a32b01e278fcd088bcffd494a1cd39674e5431",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "999\n5\t11\n8\t12\n9\t13\n11\t14\n4\t15\n7\t16\n8\t17\n10\t18\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-capture-scopes-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": true,
+      "source": "src/remaining-capture-scopes.lua",
+      "sourceSha256": "4d2197920361053ca19e01f362e884b9403e839686306633d0eff5a2c313fe51",
+      "input": "inputs/lua-5.1.5-size32-remaining-capture-scopes-debug.luac",
+      "inputSha256": "6ec32efe9623ea208998d68d03bc7b03b77f42aee003ccd9a15c45aef4ac7e99",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "999\n5\t11\n8\t12\n9\t13\n11\t14\n4\t15\n7\t16\n8\t17\n10\t18\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-capture-scopes-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": false,
+      "source": "src/remaining-capture-scopes.lua",
+      "sourceSha256": "4d2197920361053ca19e01f362e884b9403e839686306633d0eff5a2c313fe51",
+      "input": "inputs/lua-5.1.5-size32-remaining-capture-scopes-stripped.luac",
+      "inputSha256": "a826e816a9c81942820274a9e5904cdb9bc57455bf3d275cec65dee66de84ca7",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "999\n5\t11\n8\t12\n9\t13\n11\t14\n4\t15\n7\t16\n8\t17\n10\t18\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-capture-scopes-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": true,
+      "source": "src/remaining-capture-scopes.lua",
+      "sourceSha256": "4d2197920361053ca19e01f362e884b9403e839686306633d0eff5a2c313fe51",
+      "input": "inputs/lua-5.2.4-native-remaining-capture-scopes-debug.luac",
+      "inputSha256": "1aa2e55cc04bd7429aa7c152585788f6dd30225c3ecb07d925feb5b828759baf",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "999\n5\t11\n8\t12\n9\t13\n11\t14\n4\t15\n7\t16\n8\t17\n10\t18\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-capture-scopes-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": false,
+      "source": "src/remaining-capture-scopes.lua",
+      "sourceSha256": "4d2197920361053ca19e01f362e884b9403e839686306633d0eff5a2c313fe51",
+      "input": "inputs/lua-5.2.4-native-remaining-capture-scopes-stripped.luac",
+      "inputSha256": "c7dafd2841e8ecfc9f02ce3e8262bece20f8f1c93efa768ce97c9601409d45d2",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "999\n5\t11\n8\t12\n9\t13\n11\t14\n4\t15\n7\t16\n8\t17\n10\t18\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-capture-scopes-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": true,
+      "source": "src/remaining-capture-scopes.lua",
+      "sourceSha256": "4d2197920361053ca19e01f362e884b9403e839686306633d0eff5a2c313fe51",
+      "input": "inputs/lua-5.3.6-native-remaining-capture-scopes-debug.luac",
+      "inputSha256": "bd9f60c234e0fadecf2cfff35fe6faa444d0541a7d93e76c7e13be873512dde8",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "999\n5\t11\n8\t12\n9\t13\n11\t14\n4\t15\n7\t16\n8\t17\n10\t18\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-capture-scopes-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": false,
+      "source": "src/remaining-capture-scopes.lua",
+      "sourceSha256": "4d2197920361053ca19e01f362e884b9403e839686306633d0eff5a2c313fe51",
+      "input": "inputs/lua-5.3.6-native-remaining-capture-scopes-stripped.luac",
+      "inputSha256": "4ec2db98df0e907ab993931a54757f2a949ec56584ff44dfe28ff1107688acee",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "999\n5\t11\n8\t12\n9\t13\n11\t14\n4\t15\n7\t16\n8\t17\n10\t18\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-capture-scopes-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/remaining-capture-scopes.lua",
+      "sourceSha256": "4d2197920361053ca19e01f362e884b9403e839686306633d0eff5a2c313fe51",
+      "input": "inputs/lua-5.4.9-native-remaining-capture-scopes-debug.luac",
+      "inputSha256": "8dbb64e11daf02be3b6a28459d43ca58e0da1ff6261ec9e329f9de581de51ef3",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "999\n5\t11\n8\t12\n9\t13\n11\t14\n4\t15\n7\t16\n8\t17\n10\t18\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-capture-scopes-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/remaining-capture-scopes.lua",
+      "sourceSha256": "4d2197920361053ca19e01f362e884b9403e839686306633d0eff5a2c313fe51",
+      "input": "inputs/lua-5.4.9-native-remaining-capture-scopes-stripped.luac",
+      "inputSha256": "fcc1efef54598a4a91b059f6126c795bcaa86d22b2681ba204232675173dcaa7",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "999\n5\t11\n8\t12\n9\t13\n11\t14\n4\t15\n7\t16\n8\t17\n10\t18\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-capture-shared-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": true,
+      "source": "src/remaining-capture-shared.lua",
+      "sourceSha256": "5a7244386810a9ab3a3a4966e358783d1fad29a08f50d56a4a45c3c8ffdbee08",
+      "input": "inputs/lua-5.0.3-instr32-remaining-capture-shared-debug.luac",
+      "inputSha256": "59dd0f203b16aee36f6df44c71f69e8832a0c91d03038f9626c7eaf8c694c262",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "111\n112\n113\n7\n14\n21\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-capture-shared-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": false,
+      "source": "src/remaining-capture-shared.lua",
+      "sourceSha256": "5a7244386810a9ab3a3a4966e358783d1fad29a08f50d56a4a45c3c8ffdbee08",
+      "input": "inputs/lua-5.0.3-instr32-remaining-capture-shared-stripped.luac",
+      "inputSha256": "11bc0a0b836773d4eb5aa1722dfeb5b1fbffd0b3af2c4e8d58c322f35811531f",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "111\n112\n113\n7\n14\n21\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-capture-shared-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": true,
+      "source": "src/remaining-capture-shared.lua",
+      "sourceSha256": "5a7244386810a9ab3a3a4966e358783d1fad29a08f50d56a4a45c3c8ffdbee08",
+      "input": "inputs/lua-5.1.5-native-remaining-capture-shared-debug.luac",
+      "inputSha256": "40423b2d7f7decc3c1c05d1fb9f6743e3c658ed73897f549155d5c486d11ecf8",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "111\n112\n113\n7\n14\n21\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-capture-shared-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": false,
+      "source": "src/remaining-capture-shared.lua",
+      "sourceSha256": "5a7244386810a9ab3a3a4966e358783d1fad29a08f50d56a4a45c3c8ffdbee08",
+      "input": "inputs/lua-5.1.5-native-remaining-capture-shared-stripped.luac",
+      "inputSha256": "0292a677a8f8e41494a7c56466ad8a62be6eacc1ccb6a666450e89f72e7d2e77",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "111\n112\n113\n7\n14\n21\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-capture-shared-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": true,
+      "source": "src/remaining-capture-shared.lua",
+      "sourceSha256": "5a7244386810a9ab3a3a4966e358783d1fad29a08f50d56a4a45c3c8ffdbee08",
+      "input": "inputs/lua-5.1.5-size32-remaining-capture-shared-debug.luac",
+      "inputSha256": "a672ba7ddbab2e2b6a31dc45b0c27eb5768d2b057bb0c96ff7c3b023bde990a3",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "111\n112\n113\n7\n14\n21\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-capture-shared-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": false,
+      "source": "src/remaining-capture-shared.lua",
+      "sourceSha256": "5a7244386810a9ab3a3a4966e358783d1fad29a08f50d56a4a45c3c8ffdbee08",
+      "input": "inputs/lua-5.1.5-size32-remaining-capture-shared-stripped.luac",
+      "inputSha256": "ac2ce7543467ac898db4433f17d54a4ce8aaae2ca3ea7f410320a7bd69cd77ff",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "111\n112\n113\n7\n14\n21\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-capture-shared-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": true,
+      "source": "src/remaining-capture-shared.lua",
+      "sourceSha256": "5a7244386810a9ab3a3a4966e358783d1fad29a08f50d56a4a45c3c8ffdbee08",
+      "input": "inputs/lua-5.2.4-native-remaining-capture-shared-debug.luac",
+      "inputSha256": "0d1b96374d2d039bb8452e3f14d1d131721d7d620a053259bfa7b41211896395",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "111\n112\n113\n7\n14\n21\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-capture-shared-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": false,
+      "source": "src/remaining-capture-shared.lua",
+      "sourceSha256": "5a7244386810a9ab3a3a4966e358783d1fad29a08f50d56a4a45c3c8ffdbee08",
+      "input": "inputs/lua-5.2.4-native-remaining-capture-shared-stripped.luac",
+      "inputSha256": "86e76f2141ac840c0d4b0944ab0ff76e437ae49bdca8fe46e14a70496af0eb4d",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "111\n112\n113\n7\n14\n21\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-capture-shared-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": true,
+      "source": "src/remaining-capture-shared.lua",
+      "sourceSha256": "5a7244386810a9ab3a3a4966e358783d1fad29a08f50d56a4a45c3c8ffdbee08",
+      "input": "inputs/lua-5.3.6-native-remaining-capture-shared-debug.luac",
+      "inputSha256": "2866b4e4029aaead7199e28c734cf7c7c080a7e5f29d4ae18759171e70d83edf",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "111\n112\n113\n7\n14\n21\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-capture-shared-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": false,
+      "source": "src/remaining-capture-shared.lua",
+      "sourceSha256": "5a7244386810a9ab3a3a4966e358783d1fad29a08f50d56a4a45c3c8ffdbee08",
+      "input": "inputs/lua-5.3.6-native-remaining-capture-shared-stripped.luac",
+      "inputSha256": "49164b509adc2f38a28b91ca83a7d5ea800ef3fd64a440ac1e9d27e489dfe8e7",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "111\n112\n113\n7\n14\n21\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-capture-shared-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/remaining-capture-shared.lua",
+      "sourceSha256": "5a7244386810a9ab3a3a4966e358783d1fad29a08f50d56a4a45c3c8ffdbee08",
+      "input": "inputs/lua-5.4.9-native-remaining-capture-shared-debug.luac",
+      "inputSha256": "2c83fff67d37ec8eb6a2edd5c7ecf63c0ce2b3892bc0f5b13bdbd28289412424",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "111\n112\n113\n7\n14\n21\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-capture-shared-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/remaining-capture-shared.lua",
+      "sourceSha256": "5a7244386810a9ab3a3a4966e358783d1fad29a08f50d56a4a45c3c8ffdbee08",
+      "input": "inputs/lua-5.4.9-native-remaining-capture-shared-stripped.luac",
+      "inputSha256": "91956db6174483f77a68ebd5f03f23c05d57988000582527c7bd552797883c54",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "111\n112\n113\n7\n14\n21\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-close-break-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/remaining-close-break.lua",
+      "sourceSha256": "49f994a425dc42c29badb3e4126caa6a9331c381de98f5c4eb7198b5c6e69db6",
+      "input": "inputs/lua-5.4.9-native-remaining-close-break-debug.luac",
+      "inputSha256": "f2c4cf4e3274fa2c7991f246707e285e6729702ff57ba7408549fd49431ca986",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\n12x\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-close-break-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/remaining-close-break.lua",
+      "sourceSha256": "49f994a425dc42c29badb3e4126caa6a9331c381de98f5c4eb7198b5c6e69db6",
+      "input": "inputs/lua-5.4.9-native-remaining-close-break-stripped.luac",
+      "inputSha256": "7754dfbba7cc2eafc83ace67c005a26d8b5ff3cc0c49cf3b0303af8c0b7812d9",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "12\n12x\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-close-capture-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/remaining-close-capture.lua",
+      "sourceSha256": "28a7cf4e6bc754f6d3cefac2695832d3dcfe4a683870cce26950164dacfd77a5",
+      "input": "inputs/lua-5.4.9-native-remaining-close-capture-debug.luac",
+      "inputSha256": "34931b992bc8cc92e2a978fa68da16884df62b0522aa5ff57cbe84939ab73f17",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\t\n17\tc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-close-capture-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/remaining-close-capture.lua",
+      "sourceSha256": "28a7cf4e6bc754f6d3cefac2695832d3dcfe4a683870cce26950164dacfd77a5",
+      "input": "inputs/lua-5.4.9-native-remaining-close-capture-stripped.luac",
+      "inputSha256": "b22c81cc8facb64c49b6ec56d0aa1373050909de01e23d1cddeea6f96d7a3bb2",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "7\t\n17\tc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-close-order-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/remaining-close-order.lua",
+      "sourceSha256": "c9b54e0a706eb9f2d11dc95df152d6f30c5b277c97260b995fadda4858163f87",
+      "input": "inputs/lua-5.4.9-native-remaining-close-order-debug.luac",
+      "inputSha256": "60d64679f54dd0d32db5c18c5c0ea3d8122b6e37eeb46d1c2b58eea64bce5208",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "ok\tnil\t7\nc.b.d.a.\nfalse\tbad\nc!b!a!\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-close-order-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/remaining-close-order.lua",
+      "sourceSha256": "c9b54e0a706eb9f2d11dc95df152d6f30c5b277c97260b995fadda4858163f87",
+      "input": "inputs/lua-5.4.9-native-remaining-close-order-stripped.luac",
+      "inputSha256": "de888c923b2a166a128814c053392eabbc4ca5615836a85d3c7dc6e85e6591ff",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "ok\tnil\t7\nc.b.d.a.\nfalse\tbad\nc!b!a!\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-loop-bounds-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": true,
+      "source": "src/remaining-loop-bounds.lua",
+      "sourceSha256": "af44a4e4b606827cc31e8bb4b3d3520f3e9eed98d43dee142dc4f21df4c7cd7e",
+      "input": "inputs/lua-5.0.3-instr32-remaining-loop-bounds-debug.luac",
+      "inputSha256": "807d88d6667b1b0986a8c2ff0bddea87b39f480bcf19e00d603b8e5ed4f9e5d7",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "5\t15\tabc\n3\t9\tabc\n0\t0\tabc\n0\t0\tabc\n4\t5\tabc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.0.3-instr32-remaining-loop-bounds-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.0.3-instr32",
+      "debug": false,
+      "source": "src/remaining-loop-bounds.lua",
+      "sourceSha256": "af44a4e4b606827cc31e8bb4b3d3520f3e9eed98d43dee142dc4f21df4c7cd7e",
+      "input": "inputs/lua-5.0.3-instr32-remaining-loop-bounds-stripped.luac",
+      "inputSha256": "4ed2ee75ed3dcaa999e4a71fb8234c843f93fa353c6b0e5e7e0eabc7726b4d69",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "5\t15\tabc\n3\t9\tabc\n0\t0\tabc\n0\t0\tabc\n4\t5\tabc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-loop-bounds-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": true,
+      "source": "src/remaining-loop-bounds.lua",
+      "sourceSha256": "af44a4e4b606827cc31e8bb4b3d3520f3e9eed98d43dee142dc4f21df4c7cd7e",
+      "input": "inputs/lua-5.1.5-native-remaining-loop-bounds-debug.luac",
+      "inputSha256": "2e4ad7b4688137000c6c5c2faf893ec153dc44795022e11bea01470a6d03af96",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "5\t15\tabc\n3\t9\tabc\n0\t0\tabc\n0\t0\tabc\n4\t5\tabc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-native-remaining-loop-bounds-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-native",
+      "debug": false,
+      "source": "src/remaining-loop-bounds.lua",
+      "sourceSha256": "af44a4e4b606827cc31e8bb4b3d3520f3e9eed98d43dee142dc4f21df4c7cd7e",
+      "input": "inputs/lua-5.1.5-native-remaining-loop-bounds-stripped.luac",
+      "inputSha256": "2f1ad6f92e378c87b27a944b2264f9de72c5b70fd4495f3dc3b5fb8254669c3a",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "5\t15\tabc\n3\t9\tabc\n0\t0\tabc\n0\t0\tabc\n4\t5\tabc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-loop-bounds-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": true,
+      "source": "src/remaining-loop-bounds.lua",
+      "sourceSha256": "af44a4e4b606827cc31e8bb4b3d3520f3e9eed98d43dee142dc4f21df4c7cd7e",
+      "input": "inputs/lua-5.1.5-size32-remaining-loop-bounds-debug.luac",
+      "inputSha256": "bc26be1fb6c57d81922bf9cd70aa1df08845664da3af8f27fc9c75a3ff0eab90",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "5\t15\tabc\n3\t9\tabc\n0\t0\tabc\n0\t0\tabc\n4\t5\tabc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.1.5-size32-remaining-loop-bounds-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.1.5-size32",
+      "debug": false,
+      "source": "src/remaining-loop-bounds.lua",
+      "sourceSha256": "af44a4e4b606827cc31e8bb4b3d3520f3e9eed98d43dee142dc4f21df4c7cd7e",
+      "input": "inputs/lua-5.1.5-size32-remaining-loop-bounds-stripped.luac",
+      "inputSha256": "7c71b63e4273830e099ecfc912f3238c176651901e3dcb0a53a52b9a2be1b790",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "5\t15\tabc\n3\t9\tabc\n0\t0\tabc\n0\t0\tabc\n4\t5\tabc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-loop-bounds-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": true,
+      "source": "src/remaining-loop-bounds.lua",
+      "sourceSha256": "af44a4e4b606827cc31e8bb4b3d3520f3e9eed98d43dee142dc4f21df4c7cd7e",
+      "input": "inputs/lua-5.2.4-native-remaining-loop-bounds-debug.luac",
+      "inputSha256": "387c0e5a93cac51f75312b1fe613b114b7956e73ec6a60eb4c5e7d3a58138ce3",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "5\t15\tabc\n3\t9\tabc\n0\t0\tabc\n0\t0\tabc\n4\t5\tabc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.2.4-native-remaining-loop-bounds-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.2.4-native",
+      "debug": false,
+      "source": "src/remaining-loop-bounds.lua",
+      "sourceSha256": "af44a4e4b606827cc31e8bb4b3d3520f3e9eed98d43dee142dc4f21df4c7cd7e",
+      "input": "inputs/lua-5.2.4-native-remaining-loop-bounds-stripped.luac",
+      "inputSha256": "326538fa7f9a7e77d57c40e98880b2cd324c58f1e2e517862320829d0fc18e8b",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "5\t15\tabc\n3\t9\tabc\n0\t0\tabc\n0\t0\tabc\n4\t5\tabc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-loop-bounds-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": true,
+      "source": "src/remaining-loop-bounds.lua",
+      "sourceSha256": "af44a4e4b606827cc31e8bb4b3d3520f3e9eed98d43dee142dc4f21df4c7cd7e",
+      "input": "inputs/lua-5.3.6-native-remaining-loop-bounds-debug.luac",
+      "inputSha256": "2d2020f1ba625d0664b4af31009111b41fdcec4d9a94938671f15cb287940725",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "5\t15\tabc\n3\t9\tabc\n0\t0\tabc\n0\t0\tabc\n4\t5.0\tabc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.3.6-native-remaining-loop-bounds-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.3.6-native",
+      "debug": false,
+      "source": "src/remaining-loop-bounds.lua",
+      "sourceSha256": "af44a4e4b606827cc31e8bb4b3d3520f3e9eed98d43dee142dc4f21df4c7cd7e",
+      "input": "inputs/lua-5.3.6-native-remaining-loop-bounds-stripped.luac",
+      "inputSha256": "5ed6a78cd484d5a2dd837fa0a95775e7b8174248881c0dc328d8a79075ce52c6",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "5\t15\tabc\n3\t9\tabc\n0\t0\tabc\n0\t0\tabc\n4\t5.0\tabc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-loop-bounds-debug",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": true,
+      "source": "src/remaining-loop-bounds.lua",
+      "sourceSha256": "af44a4e4b606827cc31e8bb4b3d3520f3e9eed98d43dee142dc4f21df4c7cd7e",
+      "input": "inputs/lua-5.4.9-native-remaining-loop-bounds-debug.luac",
+      "inputSha256": "d8fdc75fce23c8aea3021c6ba73a7148421c297d7649c2d59fdc51bfa65d496b",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "5\t15\tabc\n3\t9\tabc\n0\t0\tabc\n0\t0\tabc\n4\t5.0\tabc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
+    },
+    {
+      "id": "lua-5.4.9-native-remaining-loop-bounds-stripped",
+      "group": "remaining-regressions",
+      "authored": true,
+      "compiler": "lua-5.4.9-native",
+      "debug": false,
+      "source": "src/remaining-loop-bounds.lua",
+      "sourceSha256": "af44a4e4b606827cc31e8bb4b3d3520f3e9eed98d43dee142dc4f21df4c7cd7e",
+      "input": "inputs/lua-5.4.9-native-remaining-loop-bounds-stripped.luac",
+      "inputSha256": "5f05391a817ca01a954900fed9045b11a49b470cd2fdd35aec1e59489ad0512d",
+      "observation": {
+        "exitCode": 0,
+        "stdout": "5\t15\tabc\n3\t9\tabc\n0\t0\tabc\n0\t0\tabc\n4\t5.0\tabc\n",
+        "stderr": ""
+      },
+      "status": "behavior-pass"
     }
   ],
   "compilerSources": {
